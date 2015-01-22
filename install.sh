@@ -61,3 +61,4 @@ echo ">> hooks.py backup is located at $BACKUPFILE"
 #copy nre hooks.py to the configuration directory
 cp "$DIR/hooks.py" "$HOME/.urlwatch/lib/hooks.py"
 echo ">> new hooks file successfully copied"
+echo "[DONE] You can remove this folder now, if you want to."

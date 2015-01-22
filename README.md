@@ -20,3 +20,6 @@ You can also pipe the output into your mailing program to get notified if anythi
 crontab -e
 */5 * * * * urlwatch | mailx -E -s "Your fav twitter username is available again" your@email.tld
 ```
+
+## Just give me the filters
+If you've already installed urlwatch and you just want to apply advanced filters for Twitter, you can copy them from hooks.py into your hooks.py file.

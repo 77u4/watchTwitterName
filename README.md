@@ -9,6 +9,7 @@ execute ``` ./install.sh ```. You will need super user privileges.
 
 After installing urlwatch you just need to execute ``` urlwatch ``` to see if anything has changed. If you want to watch your URLs more often, you can create a cronjob using 
 ```
+cronjob -e
 */5 * * * * urlwatch 
 ```
 (this cronjob executes urlwatch every 5 minutes) 
@@ -16,5 +17,6 @@ After installing urlwatch you just need to execute ``` urlwatch ``` to see if an
 You can also pipe the output into your mailing program to get notified if anything has changed.
 
 ```
+crontab -e
 */5 * * * * urlwatch | mailx -E -s "Your fav twitter username is available again" your@email.tld
 ```

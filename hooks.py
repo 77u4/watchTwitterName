@@ -41,11 +41,7 @@ from urlwatch import html2txt
 
 def filter(url, data):
     if url.startswith('https://twitter.com/'):
-        return re.sub('<input type="hidden" name="authenticity_token" value=".*">', '', 
-        		re.sub('<input type="hidden" id="init-data" class="json-data" value=".*">', '', 
-        		 re.sub('<input type="hidden" value=".*" name="authenticity_token"\/>', '', 
-				  re.sub('<link .*>','',
-				   re.sub('background-image: url\(https\:\/\/.*\);', '', data)))))
+        return re.findall('<title>.*<\/title>', data).pop()
 				   
     elif url.endswith('.ics') or url == 'http://www.kukuk.at/ical/events':
         # example of generating a summary for icalendar files

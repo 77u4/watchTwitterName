@@ -41,7 +41,7 @@ from urlwatch import html2txt
 
 def filter(url, data):
     if url.startswith('https://twitter.com/'):
-        return re.findall('<title>.*<\/title>', data).pop()
+        return re.sub('Tweets mit Antworten von', 'Tweets with replies by', re.sub('gesperrt','Suspended', re.findall('<title>.*<\/title>', data).pop()))
 				   
     elif url.endswith('.ics') or url == 'http://www.kukuk.at/ical/events':
         # example of generating a summary for icalendar files
@@ -61,5 +61,4 @@ def filter(url, data):
         # using a regular expression and does no formatting)
         return html2txt.html2text(data, method='lynx')
     return data
-
 
